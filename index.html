@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <style>
+          html, body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            height: 100%;
+            width: 100%;
+          }
+          #player {
+            width: 100%;
+            height: 100%;
+          }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.3.5/dist/shaka-player.compiled.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dash-shaka-playback@latest/dist/dash-shaka-playback.min.js"></script>
+      </head>
+      <body>
+    <div id="player"></div>
+
+    <script>
+      const player = new Clappr.Player({
+        parentId: "#player",
+        plugins: [DashShakaPlayback],
+        source: "https://cdn.trimi.com.ar/live/sm-live/ESPN_PREM_21-05/sa_live_dash_ll/ESPN_PREM_21-05.mpd",
+        shakaConfiguration: {
+          drm: {
+            clearKeys: {
+              "3b6fa6524d254c96b5a101c8118d3ae6": "d5e2a9d3e2c5aa8587eada281acef6bc"
+            }
+              }
+            },
+            autoPlay: true,
+            mute: false,
+            width: "100%",
+            height: "100%",
+          });
+        </script>
+      </body>
+    </html>' 
